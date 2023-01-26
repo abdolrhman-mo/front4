@@ -1,0 +1,48 @@
+@import 'variables'
+
+.btn.btn-primary
+    background: #fff
+    color: $main-color
+    font-weight: bold
+    border: none
+    border-radius: 30px
+    padding: 10px 15px
+    transition: opacity 0.3s ease
+    &:hover
+        color: $main-color
+        background: #fff
+        opacity: 0.8
+
+header
+    .carousel.slide
+            .carousel-inner
+                    .carousel-item
+                        background: $main-color
+                        box-shadow: 0px 0px 141px 44px rgba(0,0,0,0.75) inset
+                        -webkit-box-shadow: 0px 0px 141px 44px rgba(0,0,0,0.75) inset
+                        -moz-box-shadow: 0px 0px 141px 44px rgba(0,0,0,0.75) inset
+                        img,
+                        video
+                            max-height: 90vh
+                            margin: 0 auto
+
+h1.text-center
+    color: #000
+    font-size: 55px
+    font-weight: 600
+    margin: 120px auto
+
+@media (min-width: 765px)
+    h1.text-center
+        width: 50% 
+
+.card
+    margin-bottom: 80px
+    border: none
+    .card-body
+        color: #fff
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        direction: rtl

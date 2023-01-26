@@ -1,0 +1,26 @@
+.car-gallery {
+  display: none;
+}
+.car-gallery header {
+  margin-bottom: 60px;
+}
+.car-gallery main .row > div {
+  text-align: center;
+}
+.car-gallery main .row .row {
+  height: 100%;
+}
+.car-gallery main img {
+  width: 90%;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.car-gallery main li {
+  list-style: none;
+  font-size: large;
+  font-weight: 500;
+}
+
+.car-gallery.active {
+  display: block;
+}

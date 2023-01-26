@@ -1,0 +1,55 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous")
+        link(rel="stylesheet", href="css/layout.css")
+        block styles
+        title Solo Motors
+    body 
+        nav.navbar.navbar-expand-lg
+            .container
+                a.navbar-brand(href='#') 
+                    img(src="assets/brand-name 3.png", alt="", height="50")
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon 
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                        li.nav-item
+                            a.nav-link.active(href='/') Home
+                        li.nav-item
+                            a.nav-link(href='#contact') Contact Us
+
+        block content
+
+        footer#contact
+            .container 
+                .row 
+                    .col-lg-6 
+                        h2 Head Office
+                        .content
+                            a(target="_blank", href="https://www.google.com/maps?ll=30.124464,31.368046&z=16&t=m&hl=en&gl=EG&mapclient=embed&q=47+Mohammed+Refaat+Huckstep+El+Nozha+Cairo+Governorate+4473140") 
+                                i.fa-solid.fa-location-dot
+                                p(style="direction: rtl") 21 شارع محمد رفعت النزهة الجديدة بالقاهره
+                            a(href="https://www.facebook.com/Solo.Motors.eg") 
+                                i.fa-brands.fa-facebook
+                                p Solo Motors
+                            a(href="https://wa.me/+2001000899309/?text=اريد أن أستفسر عن بعض المعلومات", target="_blank")
+                                i.fa-brands.fa-whatsapp
+                                p send a message
+                            a(href="tel:01000899309") 
+                                i.fa-solid.fa-phone
+                                p 01000899309  
+                    .col-lg-6
+                        h2 How to Find Us
+                        iframe(
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.91945049199!2d31.366157314445392!3d30.125118321713376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458168852eeb3b7%3A0x23c56308234df942!2s47%20Mohammed%20Refaat%2C%20Huckstep%2C%20El%20Nozha%2C%20Cairo%20Governorate%204473140!5e0!3m2!1sen!2seg!4v1674671985548!5m2!1sen!2seg", 
+                            allowfullscreen="",
+                            loading="lazy",
+                            referrerpolicy="no-referrer-when-downgrade"
+                            )
+
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous")
+        script(src="js/app.js") 

@@ -1,0 +1,51 @@
+extends pug/layout.pug
+    
+block styles 
+    link(rel="stylesheet", href="css/main.css")
+
+block content
+
+    include pug/cars.pug
+
+    header 
+        #carouselExampleAutoplaying.carousel.slide(data-bs-ride="carousel")
+            .carousel-indicators
+                button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                each num in [1, 2, 3, 4, 5, 6, 7]
+                    button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to=num aria-label=`Slide ${num + 1}`)
+
+            .carousel-inner
+                .carousel-item.active
+                    img.d-block(src='../assets/car3.jpg' alt='...')
+                    .carousel-caption.d-none.d-md-block
+                        h5=`${cars[2].model} ${cars[2].name}`
+                each car in cars 
+                    .carousel-item
+                        img.d-block(src=`../assets/${car.img}` alt='...')
+                        .carousel-caption.d-none.d-md-block
+                            h5=`${car.model} ${car.name}`
+
+            button.carousel-control-prev(type='button' data-bs-target='#carouselExampleAutoplaying' data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+            button.carousel-control-next(type='button' data-bs-target='#carouselExampleAutoplaying' data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next
+
+    .container
+        h1.text-center بيع و شراء السيارت المستعمله بأفضل الاسعار
+        .row
+            each car in cars
+                .col-lg-6
+                    .card(style=`background-color: ${car.color}`)
+                        .row.g-0
+                            .col-xl-8
+                                img.card-img-top(src=`../assets/${car.img}` alt='...')
+                            .col-xl-4
+                                .card-body
+                                    p.card-text=`${car.model} | ${car.mileage}`
+                                    h5.card-title=car.name
+                                    each info in car.info
+                                        p.car-text=info
+                                    a.btn.btn-primary(href=`/car-info.html#${car.id}`) مزيد من المعلومات
+

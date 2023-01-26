@@ -1,0 +1,43 @@
+extends layout.pug
+
+append styles 
+    link(rel="stylesheet", href="css/main.css")
+    link(rel="stylesheet", href="css/car-info.css")
+
+block content 
+    include cars.pug
+    
+    each car in cars 
+        .car-gallery(class=`car${car.id}`)
+            header 
+                #carouselExampleAutoplaying.carousel.slide(data-bs-ride="carousel")
+                    .carousel-inner
+                        .carousel-item.active
+                            img.d-block(src=`../assets/car${car.id}/exterior2.jpg` alt='...')
+                            .carousel-caption.d-none.d-md-block
+                                h5=`${car.model} ${car.name}`
+            main 
+                .container
+                    .row.mb-5
+                        .col.col-lg-8.col-sm-12.align-self-center
+                            img(src=`assets/car${car.id}/interior1.jpg`, alt="") 
+                        .col.col-lg-4.col-sm-12
+                            .row
+                                .col-lg-12.col-sm-6.align-self-start
+                                    img(src=`assets/car${car.id}/interior3.jpg`, alt="")
+                                .col-lg-12.col-sm-6.align-self-end
+                                    img(src=`assets/car${car.id}/exterior3.jpg`, alt="")
+                    .row
+                        .col.col-lg-9.col-sm-12.mx-auto.mb-5
+                            img(src=`assets/car${car.id}/interior2.jpg`, alt="")
+                        .col.col-lg-3.col-sm-12.mx-auto.align-self-center
+                            ul 
+                                each i in [0, 1, 2]
+                                    li=car.power[i]
+                    
+                        .col.col-lg-3.col-sm-12.mx-auto.order-sm-2.order-lg-1.align-self-center
+                            ul 
+                                each i in [3, 4, 5]
+                                    li=car.power[i]
+                        .col.col-lg-9.col-sm-12.mx-auto.order-sm-1.order-lg-2
+                            img(src=`assets/car${car.id}/exterior1.jpg`, alt="")
