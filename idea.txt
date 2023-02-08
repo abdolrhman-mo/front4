@@ -1,3 +1,4 @@
 git branch black theme like mercedes
-bootstrap popover on power lists to know the capabelities large screen
+bootstrap popover on power lists to know details about the capabelities on a large screen
 image up the text mobile screen
+most recent on top not in bottom

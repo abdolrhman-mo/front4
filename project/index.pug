@@ -11,8 +11,8 @@ block content
         #carouselExampleAutoplaying.carousel.slide(data-bs-ride="carousel")
             .carousel-indicators
                 button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
-                each num in [1, 2, 3, 4, 5, 6, 7]
-                    button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to=num aria-label=`Slide ${num + 1}`)
+                each car, index in cars
+                    button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to=`${index + 1}` aria-label=`Slide ${index + 2}`)
 
             .carousel-inner
                 .carousel-item.active
@@ -35,7 +35,9 @@ block content
     .container
         h1.text-center بيع و شراء السيارت المستعمله بأفضل الاسعار
         .row
-            each car in cars
+            - var carNum = cars.length
+            while carNum > 0
+                - var car = cars[carNum - 1]
                 .col-lg-6
                     .card(style=`background-color: ${car.color}`)
                         .row.g-0
@@ -43,9 +45,10 @@ block content
                                 img.card-img-top(src=`assets/${car.img}` alt='...')
                             .col-xl-4
                                 .card-body
-                                    p.card-text=`${car.model} | ${car.mileage}`
+                                    p.card-text=`${car.id} | ${car.model} | ${car.mileage}`
                                     h5.card-title=car.name
-                                    each info in car.info
-                                        p.car-text=info
-                                    a.btn.btn-primary(href=`${pageHref}/car-info.html#${car.id}`) مزيد من المعلومات
-
+                                    .card-text
+                                        each info in car.info
+                                            p.card-text(style="margin-bottom: 0")=info
+                                    a.btn.btn-primary(href=`${pageHref}/car-info.html#${car.id}` style="margin-top: 10px") مزيد من المعلومات
+                - carNum = carNum - 1
