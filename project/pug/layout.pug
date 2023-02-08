@@ -9,18 +9,22 @@ html(lang="en")
         block styles
         title Solo Motors
     body 
+
+        - var pageHref = "/template7"
+
         nav.navbar.navbar-expand-lg
             .container
-                a.navbar-brand(href='#') 
+                a.navbar-brand(href=pageHref) 
                     img(src="assets/brand-name 3.png", alt="")
                 button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon 
                 #navbarSupportedContent.collapse.navbar-collapse
                     ul.navbar-nav.me-auto.mb-2.mb-lg-0
                         li.nav-item
-                            a.nav-link.active(href='/') Home
+                            a.nav-link.active(href=`${pageHref}`) Home
                         li.nav-item
-                            a.nav-link(href='#contact') Contact Us
+                            a.nav-link(href=`${pageHref}/#contact`) Contact Us
+
 
         block content
 
