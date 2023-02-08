@@ -16,12 +16,12 @@ block content
 
             .carousel-inner
                 .carousel-item.active
-                    img.d-block(src='../assets/car3.jpg' alt='...')
+                    img.d-block(src='assets/car3.jpg' alt='...')
                     .carousel-caption.d-none.d-md-block
                         h5=`${cars[2].model} ${cars[2].name}`
                 each car in cars 
                     .carousel-item
-                        img.d-block(src=`../assets/${car.img}` alt='...')
+                        img.d-block(src=`assets/${car.img}` alt='...')
                         .carousel-caption.d-none.d-md-block
                             h5=`${car.model} ${car.name}`
 
@@ -40,7 +40,7 @@ block content
                     .card(style=`background-color: ${car.color}`)
                         .row.g-0
                             .col-xl-8
-                                img.card-img-top(src=`../assets/${car.img}` alt='...')
+                                img.card-img-top(src=`assets/${car.img}` alt='...')
                             .col-xl-4
                                 .card-body
                                     p.card-text=`${car.model} | ${car.mileage}`

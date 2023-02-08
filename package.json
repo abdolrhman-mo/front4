@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "gulp": "^4.0.2",
     "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^8.0.0",
     "gulp-livereload": "^4.0.2"
   },
   "dependencies": {

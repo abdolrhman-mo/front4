@@ -1,26 +1,27 @@
-const gulp = require('gulp'),
+var gulp = require('gulp'),
     sass = require('gulp-sass')(require('sass')),
     pug = require('gulp-pug'),
-    livereload = require('gulp-livereload')
+    livereload = require('gulp-livereload');
+
 const { src, dest, watch } = require('gulp')
 
 let html = () => {
     return src("project/index.pug")
         .pipe(pug({pretty: true}))
-        .pipe(dest("dist"))
+        .pipe(dest("docs"))
         .pipe(livereload())
 }
 
 let html2 = () => {
     return src("project/pug/car-info.pug")
         .pipe(pug({pretty: true}))
-        .pipe(dest("dist"))
+        .pipe(dest("docs"))
         .pipe(livereload())
 }
 let css = () => {
     return src("project/css/sass/main.sass")
         .pipe(sass())
-        .pipe(dest("dist/css"))
+        .pipe(dest("docs/css"))
         .pipe(livereload())
 }
 
@@ -28,7 +29,7 @@ let css = () => {
 let carInfoCss = () => {
     return src("project/css/sass/car-info.sass")
         .pipe(sass())
-        .pipe(dest("dist/css"))
+        .pipe(dest("docs/css"))
         .pipe(livereload())
 }
 
@@ -36,13 +37,13 @@ let carInfoCss = () => {
 let layoutCss = () => {
     return src("project/css/sass/layout.sass")
         .pipe(sass())
-        .pipe(dest("dist/css"))
+        .pipe(dest("docs/css"))
         .pipe(livereload())
 }
 
 let js = () => {
     return src("project/js/app.js")
-        .pipe(dest("dist/js"))
+        .pipe(dest("docs/js"))
         .pipe(livereload())
 }
 

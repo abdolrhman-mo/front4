@@ -1,4 +1,11 @@
+nav img {
+  height: 20;
+}
+
 @media (min-width: 765px) {
+  nav img {
+    height: 40;
+  }
   nav #navbarSupportedContent ul.navbar-nav {
     justify-content: end;
     width: 100%;
