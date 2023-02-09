@@ -65,3 +65,8 @@ footer iframe {
     height: 250;
   }
 }
+@media (max-width: 676px) {
+  footer iframe {
+    width: 250;
+  }
+}
